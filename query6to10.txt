@@ -1,0 +1,222 @@
+Find the product with a row id of 10
+Find only the product name and product material
+Find all products which contain the value of soft in product material 
+Find products which contain product color indigo  and product price 492.00
+Delete the products which product price value are same
+
+
+
+6.Find the product with a row id of 10
+product> db.items.find({_id:ObjectId("640b0ce77075f94f1da32c9b")})
+[
+  {
+    _id: ObjectId("640b0ce77075f94f1da32c9b"),
+    id: '10',
+    product_name: 'Generic Wooden Pizza',
+    product_price: 84,
+    product_material: 'Frozen',
+    product_color: 'indigo'
+  }
+]
+___________________________________________________________________________________
+
+7.Find only the product name and product material
+
+product> db.items.find().forEach(function(item){print("name:"+item. product_name,"material:"+item. product_material)})
+name:Intelligent Fresh Chips material:Concrete
+name:Practical Fresh Sausages material:Cotton
+name:Refined Steel Car material:Rubber
+name:Gorgeous Plastic Pants material:Soft
+name:Sleek Cotton Chair material:Fresh
+name:Awesome Wooden Towels material:Plastic
+name:Practical Soft Shoes material:Rubber
+name:Incredible Steel Hat material:Rubber
+name:Awesome Wooden Ball material:Soft
+name:Generic Wooden Pizza material:Frozen
+name:Unbranded Wooden Cheese material:Soft
+name:Unbranded Plastic Salad material:Wooden
+name:Gorgeous Cotton Keyboard material:Concrete
+name:Incredible Steel Shirt material:Metal
+name:Ergonomic Cotton Hat material:Rubber
+name:Small Soft Chair material:Cotton
+name:Licensed Plastic Bacon material:Steel
+name:Intelligent Cotton Chips material:Soft
+name:Unbranded Granite Chicken material:Metal
+name:Ergonomic Soft Hat material:Rubber
+name:Intelligent Steel Pizza material:Cotton
+name:Tasty Rubber Cheese material:Frozen
+name:Licensed Steel Car material:Cotton
+
+_______________________________________________________________________________________
+8.Find all products which contain the value of soft in product material 
+
+product> db.item.find({},{product_material:"soft"}).toArray()
+[
+  {
+    _id: ObjectId("640c4ef688d68b549392c731"),
+    product_material: 'soft'
+  },
+  {
+    _id: ObjectId("640c4ef688d68b549392c732"),
+    product_material: 'soft'
+  },
+  {
+    _id: ObjectId("640c4ef688d68b549392c733"),
+    product_material: 'soft'
+  },
+  {
+    _id: ObjectId("640c4ef688d68b549392c734"),
+    product_material: 'soft'
+  },
+  {
+    _id: ObjectId("640c4ef688d68b549392c735"),
+    product_material: 'soft'
+  },
+  {
+    _id: ObjectId("640c4ef688d68b549392c736"),
+    product_material: 'soft'
+  },
+  {
+    _id: ObjectId("640c4ef688d68b549392c737"),
+    product_material: 'soft'
+  },
+  {
+    _id: ObjectId("640c4ef688d68b549392c738"),
+    product_material: 'soft'
+  },
+  {
+    _id: ObjectId("640c4ef688d68b549392c739"),
+    product_material: 'soft'
+  },
+  {
+    _id: ObjectId("640c4ef688d68b549392c73a"),
+    product_material: 'soft'
+  },
+  {
+    _id: ObjectId("640c4ef688d68b549392c73b"),
+    product_material: 'soft'
+  },
+  {
+    _id: ObjectId("640c4ef688d68b549392c73c"),
+    product_material: 'soft'
+  },
+  {
+    _id: ObjectId("640c4ef688d68b549392c73d"),
+    product_material: 'soft'
+  },
+  {
+    _id: ObjectId("640c4ef688d68b549392c73e"),
+    product_material: 'soft'
+  },
+  {
+    _id: ObjectId("640c4ef688d68b549392c73f"),
+    product_material: 'soft'
+  },
+  {
+    _id: ObjectId("640c4ef688d68b549392c740"),
+    product_material: 'soft'
+  },
+  {
+    _id: ObjectId("640c4ef688d68b549392c741"),
+    product_material: 'soft'
+  },
+  {
+    _id: ObjectId("640c4ef688d68b549392c742"),
+    product_material: 'soft'
+  },
+  {
+    _id: ObjectId("640c4ef688d68b549392c743"),
+    product_material: 'soft'
+  },
+  {
+    _id: ObjectId("640c4ef688d68b549392c744"),
+    product_material: 'soft'
+  },
+  {
+    _id: ObjectId("640c4ef688d68b549392c745"),
+    product_material: 'soft'
+  },
+  {
+    _id: ObjectId("640c4ef688d68b549392c746"),
+    product_material: 'soft'
+  },
+  {
+    _id: ObjectId("640c4ef688d68b549392c747"),
+    product_material: 'soft'
+  },
+  {
+    _id: ObjectId("640c4ef688d68b549392c748"),
+    product_material: 'soft'
+  },
+  {
+    _id: ObjectId("640c4ef688d68b549392c749"),
+    product_material: 'soft'
+  }
+]
+____________________________________________________________________________
+
+
+9.Find products which contain product color indigo  and product price 492.00
+
+product> db.item.find({$or:[{product_color: "indigo" },{product_price:492.00}]})
+[
+  {
+    _id: ObjectId("640c4ef688d68b549392c732"),
+    id: '2',
+    product_name: 'Practical Fresh Sausages',
+    product_price: 911,
+    product_material: 'Cotton',
+    product_color: 'indigo'
+  },
+  {
+    _id: ObjectId("640c4ef688d68b549392c734"),
+    id: '4',
+    product_name: 'Gorgeous Plastic Pants',
+    product_price: 492,
+    product_material: 'Soft',
+    product_color: 'plum'
+  },
+  {
+    _id: ObjectId("640c4ef688d68b549392c73a"),
+    id: '10',
+    product_name: 'Generic Wooden Pizza',
+    product_price: 84,
+    product_material: 'Frozen',
+    product_color: 'indigo'
+  },
+  {
+    _id: ObjectId("640c4ef688d68b549392c741"),
+    id: '17',
+    product_name: 'Incredible Metal Car',
+    product_price: 36,
+    product_material: 'Fresh',
+    product_color: 'indigo'
+  },
+  {
+    _id: ObjectId("640c4ef688d68b549392c749"),
+    id: '25',
+    product_name: 'Licensed Steel Car',
+    product_price: 20,
+    product_material: 'Cotton',
+    product_color: 'indigo'
+  }
+]
+______________________________________________________________________________________
+10.Delete the products which product price value are same
+
+product> db.item.aggregate([ { $group: { _id: '$product_price' } }]).toArray()
+[
+  { _id: 28 },  { _id: 78 },
+  { _id: 46 },  { _id: 90 },
+  { _id: 36 },  { _id: 88 },
+  { _id: 655 }, { _id: 95 },
+  { _id: 84 },  { _id: 500 },
+  { _id: 20 },  { _id: 47 },
+  { _id: 26 },  { _id: 54 },
+  { _id: 37 },  { _id: 43 },
+  { _id: 89 },  { _id: 99 },
+  { _id: 911 }, { _id: 492 },
+  { _id: 33 },  { _id: 690 },
+  { _id: 474 }
+]
+______________________________________________________________________________________
